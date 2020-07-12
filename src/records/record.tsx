@@ -1,10 +1,22 @@
 import * as React from 'react';
+import { connect } from 'react-redux'
+import { RootState } from '../store';
 
 interface IRecordProps {
 }
 
-const Record: React.FunctionComponent<IRecordProps> = () => {
-  return <div>Record</div>;
+type Props = ReturnType<typeof mapState2Props> ;
+
+const Record: React.FunctionComponent<Props> = (props) => {
+  return <div>Record {props.records.records[0].name}</div>;
 };
 
-export default Record;
+
+
+const mapState2Props = (state: RootState) => {
+  return {
+    records : state.records
+  };
+}
+
+export default connect(mapState2Props)(Record);
