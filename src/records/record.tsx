@@ -5,7 +5,7 @@ import { RootState } from '../store';
 interface IRecordProps {
 }
 
-type Props = ReturnType<typeof mapState2Props> ;
+type Props = ReturnType<typeof mapState2Props> & IRecordProps;
 
 const Record: React.FunctionComponent<Props> = (props) => {
   return <div>Record {props.records.records[0].name}</div>;
