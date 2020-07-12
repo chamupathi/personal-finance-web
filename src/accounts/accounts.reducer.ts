@@ -78,8 +78,22 @@ const getDummyMap = () => {
 }
 
 const initialState: AccountsState = {
-//   docs : new Map(), //
+//   docs : new Map(), // TODO : remove this whe api integrate
     docs : getDummyMap(),
+    transactionDisplayTypes : [
+        {
+            "value": 1,
+            "displayValue": "Income"
+        },
+        {
+            "value": 2,
+            "displayValue": "Cost"
+        },
+        {
+            "value": 3,
+            "displayValue": "Internal Transfer"
+        }
+    ]
 };
 
 export function accountsReducer(

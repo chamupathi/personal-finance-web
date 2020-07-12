@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding-bottom: 8px;
     min-height: 100vh;
+    position: relative;
 }
 
 
@@ -10,5 +11,48 @@
     text-align: left;
 }
 .AddNewTransaction .header-subtitle {
+    text-align: left;
+}
+
+.AddNewTransaction .input-label {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.AddNewTransaction input {
+    width: 98%;
+    font-size: 16px;
+    line-height: 40px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background: #17133B;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+/* .AddNewTransaction input */
+
+.AddNewTransaction .save-button {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #00E168;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.AddNewTransaction .dropdown .Dropdown-control {
+    text-align: left;
+    background: #17133B;
+    color: #fff;
+}
+
+.AddNewTransaction .dropdown .Dropdown-option {
     text-align: left;
 }

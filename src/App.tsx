@@ -23,7 +23,8 @@ function App() {
             <Route exact path="/" component={Records} />
             <Route exact path={routes.records} component={Records} />
             <Route exact path={`${routes.records}/:id`} component={AccountPage} />
-            <Route exact path={`${routes.records}/:id/add-transaction`} component={AddNewTransaction} />
+            <Route exact path={`${routes.records}/:id/:mode`} component={AddNewTransaction} />
+            <Route exact path={`${routes.records}/:id/:mode/:txnId`} component={AddNewTransaction} />
             
           </Switch>
           

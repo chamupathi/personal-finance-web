@@ -27,6 +27,7 @@
     line-height: 28px;
     padding: 0 4px;
     border-radius: 4px;
+    color: #fff;
 }
 
 .transaction-table .transaction-data .date,

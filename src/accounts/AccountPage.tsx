@@ -78,17 +78,25 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
           </div>
 
           {acount.transactions.map((transaction) => (
-            <div className="transaction-data" key={transaction.id}>
-              <div className="date">{transaction.date}</div>
-              <div className="description">{transaction.description}</div>
-              <div className="type">{transaction.trans_type_id}</div>
-              <div className="amount">{transaction.amount}£</div>
-            </div>
+            <Link
+              to={`${routes.records}/${id}${routes.edit}/${transaction.id}`}
+              key={transaction.id}
+              style={{ textDecoration: "none" }}
+            >
+              <div className="transaction-data">
+                <div className="date">{transaction.date}</div>
+                <div className="description">{transaction.description}</div>
+                <div className="type">{transaction.trans_type_id}</div>
+                <div className="amount">{transaction.amount}£</div>
+              </div>
+            </Link>
           ))}
         </div>
-        <Link to={`${routes.records}/${id}/add-transaction`}
-        style={{ textDecoration: 'none' }}>
-            <div className="plus">+</div>
+        <Link
+          to={`${routes.records}/${id}${routes.add}`}
+          style={{ textDecoration: "none" }}
+        >
+          <div className="plus">+</div>
         </Link>
       </div>
     );

@@ -26,8 +26,14 @@ export interface Account {
     transaction_types: TransactionType[]
     transactions: Transaction[]
   }
+
+  export interface TransactionDisplayType {
+    value: number,
+    displayValue : string,
+  }
   
   export interface AccountsState {
-    docs : Map<string,Account>
+    docs : Map<string,Account>,
+    transactionDisplayTypes : TransactionDisplayType[]
 }
   
