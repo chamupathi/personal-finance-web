@@ -1,0 +1,55 @@
+.transaction-table {
+  margin-top: 16px;
+}
+
+.transaction-table .header {
+  height: 30px;
+}
+
+
+.transaction-table .header .date,
+.transaction-table .header .description,
+.transaction-table .header .type,
+.transaction-table .header .amount {
+  width: 25%;
+  float: left;
+  height: 30px;
+  font-size: 18px;
+}
+
+.transaction-table .transaction-data{
+    width: 98%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 6px;
+    background: #17133B;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.transaction-table .transaction-data .date,
+.transaction-table .transaction-data .description,
+.transaction-table .transaction-data .type,
+.transaction-table .transaction-data .amount {
+  width: 25%;
+  float: left;
+  height: 30px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-table .header .amount,
+.transaction-table .transaction-data .amount {
+    text-align: right;
+}
+
+.transaction-table .header .date,
+.transaction-table .transaction-data .date
+{
+    text-align: left;
+    
+}

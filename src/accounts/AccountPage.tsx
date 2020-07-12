@@ -2,9 +2,13 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { RootState } from "../store";
 import "./Account.css";
+import "./transaction-table.css";
+
 import { RecordChart } from "../records/components/RecordChart";
 import { Account } from "./accounts.types";
 import { AccountSummary } from "../records/components/AccountSummary/AccountSummary";
+import { Link } from "react-router-dom";
+import { routes } from "../routes";
 
 interface IAccountPageProps {
   match: {
@@ -13,8 +17,8 @@ interface IAccountPageProps {
     };
   };
   history: {
-      goBack: () => any | void
-  }
+    goBack: () => any | void;
+  };
 }
 
 type Props = ReturnType<typeof mapStateToProps> & IAccountPageProps;
@@ -24,8 +28,8 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
   const acount = props.accounts.docs.get(id);
 
   const goback = () => {
-    props.history.goBack()
-  }
+    props.history.goBack();
+  };
 
   if (acount)
     return (
@@ -44,7 +48,11 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
           <div className="month-label">{acount.month_label}</div>
 
           {!Number.isNaN(acount.vs) && acount.vs !== null && (
-            <div className={`transaction-percentage ${acount.vs > 0 ? "pos" : "neg"}`}>
+            <div
+              className={`transaction-percentage ${
+                acount.vs > 0 ? "pos" : "neg"
+              }`}
+            >
               ({acount.vs.toFixed(2)}%)
             </div>
           )}
@@ -62,13 +70,26 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
         ))}
 
         <div className="transaction-table">
-            <div className="header">
-                <div className="date">Date</div>
-                <div className="description">Description</div>
-                <div className="type">type</div>
-                <div className="amount">Amount</div>
+          <div className="header">
+            <div className="date">Date</div>
+            <div className="description">Description</div>
+            <div className="type">type</div>
+            <div className="amount">Amount</div>
+          </div>
+
+          {acount.transactions.map((transaction) => (
+            <div className="transaction-data" key={transaction.id}>
+              <div className="date">{transaction.date}</div>
+              <div className="description">{transaction.description}</div>
+              <div className="type">{transaction.trans_type_id}</div>
+              <div className="amount">{transaction.amount}£</div>
             </div>
+          ))}
         </div>
+        <Link to={`${routes.records}/${id}/add-transaction`}
+        style={{ textDecoration: 'none' }}>
+            <div className="plus">+</div>
+        </Link>
       </div>
     );
 
