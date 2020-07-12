@@ -1,0 +1,14 @@
+.AddNewTransaction {
+    width: 96%;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    min-height: 100vh;
+}
+
+
+.AddNewTransaction .header-title {
+    text-align: left;
+}
+.AddNewTransaction .header-subtitle {
+    text-align: left;
+}
