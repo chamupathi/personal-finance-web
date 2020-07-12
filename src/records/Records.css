@@ -1,0 +1,11 @@
+.Records {
+    width: 96%;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    min-height: 100vh;
+}
+
+.Records .header-title {
+    text-align: left;
+    margin-left: 10px;
+}

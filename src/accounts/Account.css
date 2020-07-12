@@ -1,0 +1,76 @@
+.Account {
+    width: 96%;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    min-height: 100vh;
+}
+
+.Account .header-title {
+    text-align: left;
+    /* margin-left: 10px; */
+}
+
+.Account .header-title .back-button {
+    margin: 0 10px;
+    border-radius: 40px;
+    width: 40px;
+    line-height: 40px;
+    background: #222;
+    padding: 0 9px;
+    padding-bottom: 3px;
+}
+
+.Account .transaction-summmary {
+    height: 30px;
+}
+
+.Account .month-label {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Account .month-sum {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Account .transaction-percentage {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.Account .transaction-percentage.pos {
+    color: green;
+}
+
+.Account .transaction-percentage.neg {
+    color: red;
+}
+
+.Account .transaction-type {
+    width: 100%;
+    height: 25px;
+}
+
+.Account .transaction-type .name {
+    float: left;
+    font-size: 18px;
+    margin-left: 20px;
+    line-height: 25px;
+}
+
+.Account .transaction-type .sum {
+    float: right;
+}
+
+.Account .transaction-type .sum.pos {
+    color: green;
+}
+
+.Account .transaction-type .sum.neg {
+    color: red;
+}

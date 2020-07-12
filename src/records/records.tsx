@@ -1,24 +1,36 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { RootState } from '../store';
+import './Records.css';
+import RecortListItem from './components/recort-list-item';
+import { RecordChart } from './components/RecordChart';
+import { AccountSummary } from './components/AccountSummary/AccountSummary';
 
-export interface IRecordsProps {
+interface IRecordsProps {
 }
 
-class Records extends React.Component<IRecordsProps> {
-  public render() {
-    return (
-      <div>
-        records
-      </div>
-    );
-  }
-}
+type Props = ReturnType<typeof mapStateToProps> & IRecordsProps;
 
-const mapState2Props = (state:RootState) => {
+const Records: React.FunctionComponent<Props> = (props) => {
+  return (
+    <div className='Records'>
+      <h1 className="header-title">Records</h1>
+      <RecordChart />
+      <AccountSummary {...props.total} description="In total" />
+
+      <h2 className="header-title">Your finance</h2>
+      {
+        props.records.map((record) => <RecortListItem record={record} key={record.id}/>)
+      }
+    </div>
+  );
+};
+
+const mapStateToProps = (state: RootState) => {
   return {
-    records : state.records
+    records : state.records.records,
+    total : state.records.total,
   };
 }
 
-export default connect(mapState2Props)(Records);
+export default connect(mapStateToProps)(Records);
