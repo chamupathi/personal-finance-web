@@ -5,8 +5,7 @@ import { AccountsActionTypes } from "./accounts.actions";
 
 const getDummyMap = () => {
     const docs = new Map<string, Account>()
-
-    docs.set('51', {
+    const dummydoc = {
         "month_label": "06/2020",
         "account_id": 51,
         "name": "Bank account 1",
@@ -72,7 +71,15 @@ const getDummyMap = () => {
                 "account_id": 51
             }
         ]
-    })
+    }
+    docs.set('37', dummydoc)
+    docs.set('38', dummydoc)
+    docs.set('46', dummydoc)
+    docs.set('50', dummydoc)
+    docs.set('51', dummydoc)
+    docs.set('52', dummydoc)
+    docs.set('53', dummydoc)
+    docs.set('54', dummydoc)
 
     return docs
 }

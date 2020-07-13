@@ -5,6 +5,7 @@ import './Records.css';
 import RecortListItem from './components/recort-list-item';
 import { RecordChart } from './components/RecordChart';
 import { AccountSummary } from './components/AccountSummary/AccountSummary';
+import { getDummyChartData } from './getDummyChartData';
 
 interface IRecordsProps {
 }
@@ -15,7 +16,7 @@ const Records: React.FunctionComponent<Props> = (props) => {
   return (
     <div className='Records'>
       <h1 className="header-title">Records</h1>
-      <RecordChart />
+      <RecordChart data={ getDummyChartData() }/>
       <AccountSummary {...props.total} description="In total" />
 
       <h2 className="header-title">Your finance</h2>

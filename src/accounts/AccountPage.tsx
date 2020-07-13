@@ -9,6 +9,8 @@ import { Account } from "./accounts.types";
 import { AccountSummary } from "../records/components/AccountSummary/AccountSummary";
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
+import { getDummyChartData } from "../records/getDummyChartData";
+import { currency } from "../constants";
 
 interface IAccountPageProps {
   match: {
@@ -39,7 +41,7 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
           <span onClick={goback} className="back-button">{`<`}</span>
           {acount?.name}
         </h1>
-        <RecordChart />
+        <RecordChart data={getDummyChartData()}/>
         <AccountSummary {...acount} description="In total" />
 
         <h2 className="header-title">Transactions</h2>
@@ -57,14 +59,14 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
             </div>
           )}
 
-          <div className="month-sum">{acount.sum}£</div>
+          <div className="month-sum">{acount.sum}{currency}</div>
         </div>
 
         {acount.transaction_types.map((type) => (
           <div key={type.id} className="transaction-type">
             <div className="name">{type.name}</div>
             <div className={`sum ${type.sum > 0 ? "pos" : "neg"}`}>
-              {type.sum}£
+              {type.sum}{currency}
             </div>
           </div>
         ))}
@@ -87,7 +89,7 @@ const AccountPage: React.FunctionComponent<Props> = (props) => {
                 <div className="date">{transaction.date}</div>
                 <div className="description">{transaction.description}</div>
                 <div className="type">{transaction.trans_type_id}</div>
-                <div className="amount">{transaction.amount}£</div>
+                <div className="amount">{transaction.amount}{currency}</div>
               </div>
             </Link>
           ))}
