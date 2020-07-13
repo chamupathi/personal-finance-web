@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 export interface Transaction {
     id: string | number,
     description:string,

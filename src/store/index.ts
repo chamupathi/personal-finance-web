@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 import { combineReducers } from 'redux';
 
 import { recordsReducer } from '../records/records.reducer'

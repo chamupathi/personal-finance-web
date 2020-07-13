@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 import * as React from 'react';
 import './RecordChart.css'
 import {Line} from 'react-chartjs-2';

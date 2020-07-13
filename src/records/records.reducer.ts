@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 import { RecordsState } from "./records.types";
 import { RecordActionTypes } from "./records.actions";
 import record from "./record";

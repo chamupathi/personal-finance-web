@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 import * as React from "react";
 import { connect } from "react-redux";
 import { RootState } from "../../store";

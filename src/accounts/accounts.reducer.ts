@@ -1,3 +1,6 @@
+// @author Chamupathi Mendis.
+// email chamupathi2008@gmail.com
+
 import { AccountsState, Account } from "./accounts.types";
 import { AccountsActionTypes } from "./accounts.actions";
 
